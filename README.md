@@ -7,7 +7,7 @@
 ![ipconfig](计算机网络实验/png/1.png)
 ## 实作二
 使用 ipconfig/all 查看旁边计算机的网络配置，看看有什么异同。
-![ipconfig](./png/2.png)
+![ipconfig](计算机网络实验/png/2.png)
 
 问题：
 你的计算机和旁边的计算机是否处于同一子网，为什么？<br>
@@ -16,10 +16,10 @@
 ## ping
 ## 实作一
 要测试到某计算机如 重庆交通大学 Web 服务器的连通性，可以使用 ping www.cqjtu.edu.cn 命令，也可直接使用 IP 地址。
-![ipconfig](./png/3.png)
+![ipconfig](计算机网络实验/png/3.png)
 ## 实作二
 使用 ping/? 命令了解该命令的各种选项并实际使用。
-![ipconfig](./png/4.png)
+![ipconfig](计算机网络实验/png/4.png)
 
 问题：
 假设你不能 ping 通某计算机或 IP，但你确定该计算机和你之间的网络是连通的，那么可能的原因是什么？该如何处理能保证 ping 通？<br>
@@ -37,10 +37,10 @@
 ## tracert
 ## 实作一
 要了解到某计算机如 www.baidu.com 中间经过了哪些节点（路由器）及其它状态，可使用 tracert www.baidu.com 命令，查看反馈的信息，了解节点的个数。
-![ipconfig](./png/5.png)
+![ipconfig](计算机网络实验/png/5.png)
 ## 实作二
 ping.pe 这个网站可以探测从全球主要的 ISP 到某站点如 https://qige.io 的线路状态，当然也包括各线路到该主机的路由情况。请使用浏览器访问 http://ping.pe/qige.io 进行了解。
-![ipconfig](./png/6.png)
+![ipconfig](计算机网络实验/png/6.png)
 
 问题：
 tracert 能告诉我们路径上的节点以及大致的延迟等信息，那么它背后的原理是什么？本问题可结合第二部分的 Wireshark 实验进行验证。<br>
@@ -61,16 +61,16 @@ tracert 能告诉我们路径上的节点以及大致的延迟等信息，那么
 运行 arp -a 命令查看当前的 arp 缓存， 请留意缓存了些什么。
 
 然后 ping 一下你旁边的计算机 IP（注意，需保证该计算机的 IP 没有出现在 arp 缓存中，或者使用 arp -d * 先删除全部缓存），再次查看缓存，你会发现一些改变，请作出解释。
-![ipconfig](./png/11.png)
-![ipconfig](./png/12.png)
+![ipconfig](计算机网络实验/png/11.png)
+![ipconfig](计算机网络实验/png/12.png)
 ## 实作二
 请使用 arp /? 命令了解该命令的各种选项。
-![ipconfig](./png/13.png)
+![ipconfig](计算机网络实验/png/13.png)
 ## 实作三
 一般而言，arp 缓存里常常会有网关的缓存，并且是动态类型的。
 
 假设当前网关的 IP 地址是 192.168.0.1，MAC 地址是 5c-d9-98-f1-89-64，请使用 arp -s 192.168.0.1 5c-d9-98-f1-89-64 命令设置其为静态类型的。
-![ipconfig](./png/14.png)
+![ipconfig](计算机网络实验/png/14.png)
 
 问题：
 你可能会在实作三的操作中得到 "ARP 项添加失败: 请求的操作需要提升" 这样的信息，表示命令没能执行成功，你该如何解决？<br>
@@ -87,10 +87,10 @@ tracert 能告诉我们路径上的节点以及大致的延迟等信息，那么
 ## DHCP
 ## 实作一
 一般地，我们自动获取的网络配置信息包括：IP 地址、子网掩码、网关 IP 以及 DNS 服务器 IP 等。使用 ipconfig/release 命令释放自动获取的网络配置，并用 ipconfig/renew 命令重新获取，了解 DHCP 工作过程和原理。
-![ipconfig](./png/7.png)
-![ipconfig](./png/8.png)
-![ipconfig](./png/9.png)
-![ipconfig](./png/10.png)
+![ipconfig](计算机网络实验/png/7.png)
+![ipconfig](计算机网络实验/png/8.png)
+![ipconfig](计算机网络实验/png/9.png)
+![ipconfig](计算机网络实验/png/10.png)
 
 
 问题：
@@ -105,27 +105,27 @@ tracert 能告诉我们路径上的节点以及大致的延迟等信息，那么
 ## netstat
 ## 实作一
 Windows 系统将一些常用的端口与服务记录在 C:\WINDOWS\system32\drivers\etc\services 文件中，请查看该文件了解常用的端口号分配。
-![ipconfig](./png/15.png)
+![ipconfig](计算机网络实验/png/15.png)
 
 ## 实作二
 使用 netstat -an 命令，查看计算机当前的网络连接状况。更多的 netstat 命令选项，可参考上面链接 4 和 5 。
-![ipconfig](./png/16.png)
-![ipconfig](./png/17.png)
+![ipconfig](计算机网络实验/png/16.png)
+![ipconfig](计算机网络实验/png/17.png)
 
 ## DNS
 ## 实作一
 Windows 系统将一些固定的/静态的 DNS 信息记录在 C:\WINDOWS\system32\drivers\etc\hosts 文件中，如我们常用的 localhost 就对应 127.0.0.1 。请查看该文件看看有什么记录在该文件中。
-![ipconfig](./png/18.png)
+![ipconfig](计算机网络实验/png/18.png)
 
 
 ## 实作二
 解析过的 DNS 记录将会被缓存，以利于加快解析速度。请使用 ipconfig /displaydns 命令查看。我们也可以使用 ipconfig /flushdns 命令来清除所有的 DNS 缓存。
-![ipconfig](./png/19.png)
-![ipconfig](./png/20.png)
+![ipconfig](计算机网络实验/png/19.png)
+![ipconfig](计算机网络实验/png/20.png)
 ## 实作三
 使用 nslookup qige.io 命令，将使用默认的 DNS 服务器查询该域名。当然你也可以指定使用 CloudFlare（1.1.1.1）或 Google（8.8.8.8） 的全球 DNS 服务器来解析，如：nslookup qige.io 8.8.8.8，当然，由于你懂的原因，这不一定会得到正确的答案。
-![ipconfig](./png/21.png)
-![ipconfig](./png/22.png)
+![ipconfig](计算机网络实验/png/21.png)
+![ipconfig](计算机网络实验/png/22.png)
 
 问题：
 上面秘籍中我们提到了使用插件或自己修改 hosts 文件来屏蔽广告，思考一下这种方式为何能过滤广告？如果某些广告拦截失效，那么是什么原因？你应该怎样进行分析从而能够成功屏蔽它？<br>
@@ -134,11 +134,11 @@ Windows 系统将一些固定的/静态的 DNS 信息记录在 C:\WINDOWS\system
 ## cache
 ## 实作一
 打开 Chrome 或 Firefox 浏览器，访问 https://qige.io ，接下来敲 F12 键 或 Ctrl + Shift + I 组合键打开开发者工具，选择 Network 面板后刷新页面，你会在开发者工具底部看到加载该页面花费的时间。请进一步查看哪些文件被 cache了，哪些没有。
-![ipconfig](./png/23.png)
+![ipconfig](计算机网络实验/png/23.png)
 
 ## 实作二
 接下来仍在 Network 面板，选择 Disable cache 选项框，表明当前不使用 cache，页面数据全部来自于 Internet，刷新页面，再次在开发者工具底部查看加载该页面花费的时间。你可比对与有 cache 时的加载速度差异。
-![ipconfig](./png/24.png)
+![ipconfig](计算机网络实验/png/24.png)
 
 
 # Wireshark 实验
@@ -148,7 +148,7 @@ Windows 系统将一些固定的/静态的 DNS 信息记录在 C:\WINDOWS\system
 ## 实作一 ： 熟悉 Ethernet 帧结构
 
 使用 Wireshark 任意进行抓包，熟悉 Ethernet 帧的结构，如：目的 MAC、源 MAC、类型、字段等。
-![ipconfig](./png/25.png)
+![ipconfig](计算机网络实验/png/25.png)
 
 
 
@@ -163,7 +163,7 @@ Windows 系统将一些固定的/静态的 DNS 信息记录在 C:\WINDOWS\system
  答：是旁边计算机的mac地址
 
  2.然后 ping qige.io （或者本子网外的主机都可以），同时用 Wireshark 抓这些包（可 icmp 过滤），记录一下发出帧的目的 MAC 地址以及返回帧的源 MAC 地址是多少？这个 MAC 地址是谁的？
-![ipconfig](./png/26.png)
+![ipconfig](计算机网络实验/png/26.png)
  答：发出帧的目的mac和返回帧的源mac都是网关的mac地址
 
  3.再次 ping www.cqjtu.edu.cn （或者本子网外的主机都可以），同时用 Wireshark 抓这些包（可 icmp 过滤），记录一下发出帧的目的 MAC 地址以及返回帧的源 MAC 地址又是多少？这个 MAC 地址又是谁的？
@@ -181,14 +181,14 @@ Windows 系统将一些固定的/静态的 DNS 信息记录在 C:\WINDOWS\system
 ## 实作三 掌握 ARP 解析过程
 1.为防止干扰，先使用 arp -d * 命令清空 arp 缓存
 2.ping 你旁边的计算机（同一子网），同时用 Wireshark 抓这些包（可 arp 过滤），查看 ARP 请求的格式以及请求的内容，注意观察该请求的目的 MAC 地址是什么。再查看一下该请求的回应，注意观察该回应的源 MAC 和目的 MAC 地址是什么。
-![ipconfig](./png/27.png)
+![ipconfig](计算机网络实验/png/27.png)
 
 3.再次使用 arp -d * 命令清空 arp 缓存
 4.然后 ping qige.io （或者本子网外的主机都可以），同时用 Wireshark 抓这些包（可 arp 过滤）。查看这次 ARP 请求的是什么，注意观察该请求是谁在回应。
-![ipconfig](./png/28.png)
-![ipconfig](./png/29.png)
-![ipconfig](./png/30.png)
-![ipconfig](./png/31.png)
+![ipconfig](计算机网络实验/png/28.png)
+![ipconfig](计算机网络实验/png/29.png)
+![ipconfig](计算机网络实验/png/30.png)
+![ipconfig](计算机网络实验/png/31.png)
 问题:
 
 通过以上的实验，你应该会发现，
@@ -201,7 +201,7 @@ ARP 请求都是使用广播方式发送的
 # 网络层
 ## 实作一 熟悉 IP 包结构
 使用 Wireshark 任意进行抓包（可用 ip 过滤），熟悉 IP 包的结构，如：版本、头部长度、总长度、TTL、协议类型等字段。
-![ipconfig](./png/32.png)
+![ipconfig](计算机网络实验/png/32.png)
 问题:
 
 为提高效率，我们应该让 IP 的头部尽可能的精简。但在如此珍贵的 IP 头部你会发现既有头部长度字段，也有总长度字段。请问为什么？<br>
@@ -212,8 +212,8 @@ ARP 请求都是使用广播方式发送的
 
 缺省的，ping 命令只会向对方发送 32 个字节的数据。我们可以使用 ping 202.202.240.16 -l 2000 命令指定要发送的数据长度。此时使用 Wireshark 抓包（用 ip.addr == 202.202.240.16 进行过滤），了解 IP 包如何进行分段，如：分段标志、偏移量以及每个包的大小等
 
-![ipconfig](./png/33.png)
-![ipconfig](./png/34.png)
+![ipconfig](计算机网络实验/png/33.png)
+![ipconfig](计算机网络实验/png/34.png)
 
 问题:
 
@@ -227,8 +227,8 @@ ARP 请求都是使用广播方式发送的
 在验证性实验部分我们使用了 tracert 命令进行路由追踪。其原理是主动设置 IP 包的 TTL 值，从 1 开始逐渐增加，直至到达最终目的主机。
 
 请使用 tracert www.baidu.com 命令进行追踪，此时使用 Wireshark 抓包（用 icmp 过滤），分析每个发送包的 TTL 是如何进行改变的，从而理解路由追踪原理。
-![ipconfig](./png/35.png)
-![ipconfig](./png/36.png)
+![ipconfig](计算机网络实验/png/35.png)
+![ipconfig](计算机网络实验/png/36.png)
 问题:
 在 IPv4 中，TTL 虽然定义为生命期即 Time To Live，但现实中我们都以跳数/节点数进行设置。如果你收到一个包，其 TTL 的值为 50，那么可以推断这个包从源点到你之间有多少跳？
 
@@ -238,8 +238,8 @@ ARP 请求都是使用广播方式发送的
 ## 实作一 熟悉 TCP 和 UDP 段结构
 用 Wireshark 任意抓包（可用 tcp 过滤），熟悉 TCP 段的结构，如：源端口、目的端口、序列号、确认号、各种标志位等字段。
 用 Wireshark 任意抓包（可用 udp 过滤），熟悉 UDP 段的结构，如：源端口、目的端口、长度等。
-![ipconfig](./png/37.png)
-![ipconfig](./png/38.png)
+![ipconfig](计算机网络实验/png/37.png)
+![ipconfig](计算机网络实验/png/38.png)
 问题:
 
 由上大家可以看到 UDP 的头部比 TCP 简单得多，但两者都有源和目的端口号。请问源和目的端口号用来干什么？
@@ -248,11 +248,11 @@ ARP 请求都是使用广播方式发送的
 ## 实作二 分析 TCP 建立和释放连接
 打开浏览器访问 qige.io 网站，用 Wireshark 抓包（可用 tcp 过滤后再使用加上 Follow TCP Stream），不要立即停止 Wireshark 捕获，待页面显示完毕后再多等一段时间使得能够捕获释放连接的包。<br>
 第一次握手SYN=1（主机发给服务器）
-![ipconfig](./png/39.png)
+![ipconfig](计算机网络实验/png/39.png)
 第二次握手SYN=1 ，ACK=1（服务器发给主机）
-![ipconfig](./png/40.png)
+![ipconfig](计算机网络实验/png/40.png)
 第三次握手SYN=0,ACK=1（主机发给服务器）
-![ipconfig](./png/41.png)
+![ipconfig](计算机网络实验/png/41.png)
 
 
 请在你捕获的包中找到三次握手建立连接的包，并说明为何它们是用于建立连接的，有什么特征。
@@ -288,14 +288,14 @@ ARP 请求都是使用广播方式发送的
 ## 实作一 了解 DNS 解析
 1.先使用 ipconfig /flushdns 命令清除缓存，再使用 nslookup qige.io 命令进行解析，同时用 Wireshark 任意抓包（可用 dns 过滤）。
 
-![ipconfig](./png/42.png)
-![ipconfig](./png/43.png)
-![ipconfig](./png/44.png)
+![ipconfig](计算机网络实验/png/42.png)
+![ipconfig](计算机网络实验/png/43.png)
+![ipconfig](计算机网络实验/png/44.png)
 
 2.你应该可以看到当前计算机使用 UDP，向默认的 DNS 服务器的 53 号端口发出了查询请求，而 DNS 服务器的 53 号端口返回了结果。
 
-![ipconfig](./png/45.png)
-![ipconfig](./png/46.png)
+![ipconfig](计算机网络实验/png/45.png)
+![ipconfig](计算机网络实验/png/46.png)
 
 3.可了解一下 DNS 查询和应答的相关字段的含义
 
@@ -309,9 +309,9 @@ ARP 请求都是使用广播方式发送的
 ## 实作二 了解 HTTP 的请求和应答
 1.打开浏览器访问 qige.io 网站，用 Wireshark 抓包（可用http 过滤再加上 Follow TCP Stream），不要立即停止 Wireshark 捕获，待页面显示完毕后再多等一段时间以将释放连接的包捕获。
 2.请在你捕获的包中找到 HTTP 请求包，查看请求使用的什么命令，如：GET, POST。并仔细了解请求的头部有哪些字段及其意义。
-![ipconfig](./png/47.png)
+![ipconfig](计算机网络实验/png/47.png)
 3.请在你捕获的包中找到 HTTP 应答包，查看应答的代码是什么，如：200, 304, 404 等。并仔细了解应答的头部有哪些字段及其意义。
-![ipconfig](./png/48.png)
+![ipconfig](计算机网络实验/png/48.png)
 建议：
 HTTP 请求和应答的头部字段值得大家认真的学习，因为基于 Web 的编程中我们将会大量使用。如：将用户认证的令牌信息放到头部，或者把 cookie 放到头部等。
 
@@ -334,10 +334,10 @@ CPT 软件使用简介
 
 直接连接两台 PC 构建 LAN
 将两台 PC 直接连接构成一个网络。注意：直接连接需使用交叉线。
-![ipconfig](./png/49.png)
+![ipconfig](计算机网络实验/png/49.png)
 
 进行两台 PC 的基本网络配置，只需要配置 IP 地址即可，然后相互 ping 通即成功。
-![ipconfig](./png/50.png)
+![ipconfig](计算机网络实验/png/50.png)
 用交换机构建 LAN
 构建如下拓扑结构的局域网：
 
@@ -374,12 +374,12 @@ PC3
 
 255.255.255.0
 
-![ipconfig](./png/51.png)
+![ipconfig](计算机网络实验/png/51.png)
 ✎ 问题
 
 PC0 能否 ping 通 PC1、PC2、PC3 ？
 
-![ipconfig](./png/52.png)
+![ipconfig](计算机网络实验/png/52.png)
 答：pc0能ping通pc1 但不能ping通pc2和pc3 因为不在同一子网
 
 PC3 能否 ping 通 PC0、PC1、PC2 ？为什么？
@@ -399,7 +399,7 @@ PC3 能否 ping 通 PC0、PC1、PC2 ？为什么？
 
 集线器 Hub 是工作在物理层的多接口设备，它与交换机的区别是什么？请在 CPT 软件中用 Hub 构建网络进行实际验证。
 
-![ipconfig](./png/53.png)
+![ipconfig](计算机网络实验/png/53.png)
 
 交换机接口地址列表
 二层交换机是一种即插即用的多接口设备，它对于收到的帧有 3 种处理方式：广播、转发和丢弃（请弄清楚何时进行何种操作）。那么，要转发成功，则交换机中必须要有接口地址列表即 MAC 表，该表是交换机通过学习自动得到的！
@@ -417,16 +417,16 @@ PC3 能否 ping 通 PC0、PC1、PC2 ？为什么？
 
 只使用交换机，构建如下拓扑：
 
-![ipconfig](./png/54.png)
+![ipconfig](计算机网络实验/png/54.png)
 这是初始时的状态。我们可以看到交换机之间有回路，这会造成广播帧循环传送即形成广播风暴，严重影响网络性能。
 
 随后，交换机将自动通过生成树协议（STP）对多余的线路进行自动阻塞（Blocking），以形成一棵以 Switch4 为根（具体哪个是根交换机有相关的策略）的具有唯一路径树即生成树！
 
 经过一段时间，随着 STP 协议成功构建了生成树后，Switch5 的两个接口当前物理上是连接的，但逻辑上是不通的，处于Blocking状态（桔色）如下图所示：
-![ipconfig](./png/55.png)
+![ipconfig](计算机网络实验/png/55.png)
 
 在网络运行期间，假设某个时候 Switch4 与 Switch5 之间的物理连接出现问题（将 Switch4 与 Switch5 的连线剪掉），则该生成树将自动发生变化。Switch5 上方先前 Blocking 的那个接口现在活动了（绿色），但下方那个接口仍处于 Blocking 状态（桔色）。如下图所示：
-![ipconfig](./png/56.png)
+![ipconfig](计算机网络实验/png/56.png)
 
 
 🗣 注意
@@ -441,7 +441,7 @@ PC3 能否 ping 通 PC0、PC1、PC2 ？为什么？
 我们模拟重庆交通大学和重庆大学两个学校的连接，构建如下拓扑：
 
 
-![ipconfig](./png/57.png)
+![ipconfig](计算机网络实验/png/57.png)
 
 
 说明一
@@ -451,10 +451,10 @@ PC3 能否 ping 通 PC0、PC1、PC2 ？为什么？
 
 左边路由器是交通大学的，其下使用交换机连接交通大学的网络，分配网络号 192.168.1.0/24，该路由器接口也是交通大学网络的网关，分配 IP 为 192.168.1.1
 
-![ipconfig](./png/58.png)
+![ipconfig](计算机网络实验/png/58.png)
 右边路由器是重庆大学的，其下使用交换机连接重庆大学的网络，分配网络号 192.168.3.0/24，该路由器接口也是重庆大学网络的网关，分配 IP 为 192.168.3.1
 
-![ipconfig](./png/59.png)
+![ipconfig](计算机网络实验/png/59.png)
 两个路由器之间使用广域网接口相连，也是一个子网，分配网络号 192.168.2.0/24
 说明二
 现实中，交通大学和重庆大学的连接是远程的。该连接要么通过路由器的光纤接口，要么通过广域网接口即所谓的 serial 口（如拓扑图所示）进行，一般不会通过双绞线连接（为什么？）。
