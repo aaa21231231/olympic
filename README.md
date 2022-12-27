@@ -4,7 +4,7 @@
 ## 实作一 
 使用 ipconfig/all 查看自己计算机的网络配置，尽可能明白每行的意思，特别注意 IP 地址、子网掩码 Subnet Mask、网关 Gateway。
 
-![ipconfig](./png/1.png)
+![ipconfig](计算机网络实验/png/1.png)
 ## 实作二
 使用 ipconfig/all 查看旁边计算机的网络配置，看看有什么异同。
 ![ipconfig](./png/2.png)
